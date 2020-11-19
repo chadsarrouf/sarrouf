@@ -2,25 +2,14 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #0A071C;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(50px + 2vmin);
   color: white;
 }
 
@@ -28,11 +17,158 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Arima Madurai', cursive;
+  color: black;
+  font-size: 4rem;
+  letter-spacing: -3px;
+  text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
+  position: relative;
+  z-index: 3;
+}
+
+.App-header p {
+  position: absolute;
+  top: 35%;
+}
+
+.container {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center center;
+  padding: 2rem;
+}
+
+.bird {
+  position: absolute;
+  background-image: url(bird-cells.svg);
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  will-change: background-position;
+  
+  animation-name: fly-cycle;
+  animation-duration: 1s;
+  animation-timing-function: steps(10);
+  animation-iteration-count: infinite;
+}
+
+.bird-container {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  transform: scale(0) translateX(-10vw);
+  will-change: transform;
+  
+  animation-name: fly-right-one;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.bird-container-2 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  transform: scale(0) translateX(-10vw);
+  will-change: transform;
+  
+  animation-name: fly-right-two;
+  animation-duration: 9s;
+  animation-timing-function: linear;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes fly-cycle {
+  
+  100% {
+    background-position: -900px 0;
   }
-  to {
-    transform: rotate(360deg);
+  
+}
+
+@keyframes fly-right-one {
+  
+  0% {
+    transform: scale(0.3) translateX(-40vw);
   }
+  
+  10% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  
+  20% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  
+  30% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  
+  40% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  
+  60% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  
+}
+
+@keyframes fly-right-two {
+  
+  0% {
+    transform: translateY(-2vh) translateX(-20vw) scale(0.5);
+  }
+  
+  10% {
+    transform: translateY(0vh) translateX(5vw) scale(0.4);
+  }
+  
+  20% {
+    transform: translateY(-4vh) translateX(25vw) scale(0.6);
+  }
+  
+  30% {
+    transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+  
+  40% {
+    transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+  
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+  
+  51% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  
 }
