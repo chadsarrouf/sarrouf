@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import sun from './sun5.svg';
+
 import './App.css';
 
 function App() {
@@ -6,6 +8,8 @@ function App() {
     <div className="App">
 		<header className="App-header">
 		  	<div class="container">
+          		<img src={sun} class="sun" alt="logo" />
+		  		
 				<div class="bird-container">
 					<div class="bird bird--one"></div>
 				</div>
@@ -15,10 +19,8 @@ function App() {
 				</div>
 			</div>
 			<p>	Hi, I'm Chad. </p>
-
+			
 		</header>
-
-
     </div>
   );
 }

@@ -13,6 +13,30 @@
   color: white;
 }
 
+.sun {
+  filter: invert(100%) sepia(0%) saturate(7490%) hue-rotate(330deg) brightness(107%) contrast(101%);
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: top;
+  justify-content: center;
+  position: fixed;
+  top: -125px;
+  animation-name: rotate;
+  animation-duration: 120s;
+
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
 .App-link {
   color: #61dafb;
 }
